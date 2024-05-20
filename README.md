@@ -1,0 +1,1 @@
+GraphQL exercises University of Helsinki.
