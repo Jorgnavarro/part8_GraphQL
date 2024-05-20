@@ -177,10 +177,15 @@ const resolvers = {
         }
       })
 
-      if(authorToUpdate){
-        return {...authorToUpdate, born: args.born}
+      if(!authorToUpdate){
+        return null
       }
-      return null
+      
+      const updatedAuthor = {...authorToUpdate, born: args.born}
+
+      authors = authors.map(a => a.name === args.name ? updatedAuthor : a)
+      
+      return updatedAuthor
     }
   }
 }
